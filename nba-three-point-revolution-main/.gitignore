@@ -1,0 +1,23 @@
+# Database files (too large for git, users should download from Kaggle)
+*.sqlite
+*.sqlite3
+*.db
+
+# Kaggle download artifacts
+basketball.zip
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
