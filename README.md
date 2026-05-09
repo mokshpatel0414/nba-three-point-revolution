@@ -85,8 +85,8 @@ These seasons are included in the analysis but flagged where relevant.
 
 - [x] Q1 — League-wide 3-point trend over 22 seasons
 - [x] Q2 — Which teams led the 3-point revolution? (window functions on team-season ranks)
-- [ ] Q3 — Does shooting more threes correlate with winning?
-- [ ] Q4 — Position-level shift: when did big men start shooting threes?
+- [x] Q3 — Does shooting more threes correlate with winning?
+- [x] Q4 — Position-level shift: when did big men start shooting threes?
 - [ ] Visualization notebook (matplotlib + seaborn)
 - [ ] Final writeup with charts
 
