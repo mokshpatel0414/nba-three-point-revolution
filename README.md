@@ -140,8 +140,8 @@ Three documented gaps in the source dataset, all confirmed via
 - [x] Q2: Which teams led the 3-point revolution? (window functions)
 - [x] Q3: Does shooting more threes correlate with winning? (NTILE split)
 - [x] Q4: Do the same patterns hold in the playoffs? (JOIN of two CTEs)
-- [ ] Visualization notebook (matplotlib + seaborn)
-- [ ] Final writeup with charts
+- [x] Visualization notebook (matplotlib + seaborn)
+- [x] Final writeup with charts
 
 ### Future extensions
 
