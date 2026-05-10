@@ -18,13 +18,16 @@ Over two decades, the league-wide 3-point percentage barely moved. Attempts
 and scoring went up because of shot selection, not because teams got better
 at making the shots.
 
-## Findings Summary
+![League-wide 3-point trend](charts/01_league_3pt_trend.png)
+
+## Findings
 
 ### Q1: League-wide trend
 3-point attempts per team-game grew from **13.71 in 2000-01 to 34.21 in 2022-23
 (+150%)**. The share of all field-goal attempts taken from three rose from 17%
 to 39%. League-wide 3-point efficiency stayed in a tight 34.7% to 36.7% band
-the entire time.
+the entire time. The chart above shows attempts (red) climbing steadily while
+shooting % (blue, dashed) stays flat.
 
 ### Q2: Who led the revolution?
 The **Houston Rockets led the league in 3-point attempts per game in 6 of 7
@@ -33,16 +36,20 @@ seasons from 2013-14 through 2019-20**, peaking at 45.4 attempts per game in
 season for a 3PA leader was the **2015-16 Golden State Warriors**, who finished
 73-9 with an 89% win rate. That's the highest leader win rate in the dataset.
 
+![Team that led each season in 3-point attempts](charts/02_3pt_leader_by_season.png)
+
 ### Q3: Did volume = winning?
 Within each season, teams in the top half of 3PA volume averaged a higher
 win % than teams in the bottom half. But **the gap has decayed dramatically
-over time**. The peak gap was **+14.6 percentage points in 2007-08** (Steve
-Nash-era Phoenix Suns and the seven-seconds-or-less wave). By the late 2010s
-the gap had compressed to near zero, and in **2021-22 it was negative
-(-2.3 pp)**: bottom-half teams actually outperformed.
+over time**. The peak gap was around **+9.1 percentage points in the 2007-2012
+era** (Steve Nash-era Phoenix and the seven-seconds-or-less wave). By the
+2018-2022 era it had compressed to around +4.5 pp, and in **2021-22 it was
+negative (-2.3 pp)**: bottom-half teams actually outperformed.
 
 This is alpha decay. Once every team copied the strategy, shooting more threes
 stopped being a competitive edge.
+
+![3-point volume edge has decayed over time](charts/03_volume_vs_winning.png)
 
 ### Q4: Does it hold up in the playoffs?
 Conventional wisdom says playoff basketball is more conservative. The data
@@ -53,12 +60,14 @@ teams already, so the playoff average gets pulled up. Playoff 3-point
 efficiency dropped slightly (median around 0.6 pp), so defenses do tighten,
 just less than common wisdom suggests.
 
+![Playoff vs regular-season 3PA gap](charts/04_playoffs_vs_regular.png)
+
 ## Tools
 
 - **Database:** SQLite (`nba.sqlite`, ~2.5 GB)
 - **Source:** [NBA Database on Kaggle](https://www.kaggle.com/datasets/wyattowalsh/basketball)
 - **SQL editor:** DBeaver Community
-- **Visualization:** Python (pandas, matplotlib, seaborn). *Coming soon.*
+- **Visualization:** Python (pandas, matplotlib, seaborn) in a Jupyter notebook
 
 ## Repository Structure
 
@@ -77,8 +86,13 @@ nba-three-point-revolution/
 │   ├── 02_3pt_leader_by_season.csv
 │   ├── 03_volume_vs_winning.csv
 │   └── 04_playoffs_vs_regular.csv
-├── notebooks/                         (visualization notebook, coming soon)
-└── charts/                            (exported charts, coming soon)
+├── notebooks/
+│   └── analysis.ipynb                 chart generation (matplotlib + seaborn)
+└── charts/
+    ├── 01_league_3pt_trend.png
+    ├── 02_3pt_leader_by_season.png
+    ├── 03_volume_vs_winning.png
+    └── 04_playoffs_vs_regular.png
 ```
 
 ## SQL techniques demonstrated
@@ -141,7 +155,6 @@ Three documented gaps in the source dataset, all confirmed via
 - [x] Q3: Does shooting more threes correlate with winning? (NTILE split)
 - [x] Q4: Do the same patterns hold in the playoffs? (JOIN of two CTEs)
 - [x] Visualization notebook (matplotlib + seaborn)
-- [x] Final writeup with charts
 
 ### Future extensions
 
@@ -158,4 +171,5 @@ Three documented gaps in the source dataset, all confirmed via
 3. Run the files in `sql/` in numerical order. The
    `00_data_quality_check.sql` file should be run one section at a time
    rather than as a single batch script.
-4. Export results to CSV for use in the visualization notebook.
+4. Open `notebooks/analysis.ipynb` and run all cells to regenerate the charts
+   from the exported CSVs.
