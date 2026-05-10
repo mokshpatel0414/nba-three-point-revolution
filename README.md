@@ -75,6 +75,7 @@ just less than common wisdom suggests.
 nba-three-point-revolution/
 ├── README.md                          this file
 ├── .gitignore
+├── .gitattributes  
 ├── sql/
 │   ├── 00_data_quality_check.sql      schema discovery + data caveats
 │   ├── 01_league_3pt_trend.sql        Q1: league-wide trend
