@@ -1,0 +1,9 @@
+# Don't count Jupyter notebooks toward the language statistics.
+# The notebook is for visualization output; the actual analysis is in SQL.
+*.ipynb linguist-vendored=true
+
+# Mark the data folder as data, not source code.
+data/* linguist-generated=true
+
+# Mark CSV files as data so they don't skew language detection.
+*.csv linguist-detectable=false
